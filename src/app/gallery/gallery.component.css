@@ -1,0 +1,94 @@
+.masonry {
+  width: 100%;
+  max-width: 3000px;
+  margin: 0 auto;
+}
+
+.masonry-item {
+  width: 280px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(16,24,40,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.masonry-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16,24,40,0.12);
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.masonry-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;       /* center horizontally */
+  padding: 0 200px;      /* small padding on narrow screens */
+  box-sizing: border-box;
+  max-width: 3000px;    /* optional, caps the wrapper width */
+}
+
+/* Card wrapper */
+.card {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+/* Overlay card */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* semi-transparent dark overlay */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.3s ease;
+  padding: 16px;
+  text-align: center;
+}
+.card-overlay h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.card-overlay p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Show overlay on hover */
+.masonry-item:hover .card-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .masonry-item {
+    width: 45%; /* 2 columns on smaller screens */
+  }
+  .masonry-wrapper {
+    padding: 0 16px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .masonry-item {
+    width: 100%; /* 1 column on very small screens */
+  }
+  .masonry-wrapper {
+    padding: 0 8px; /* reduce padding on very small screens */
+  }
+}
