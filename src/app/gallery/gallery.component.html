@@ -1,0 +1,14 @@
+<div class="masonry-wrapper">
+  <div *ngIf="isBrowser" #masonryGrid class="masonry">
+    <div class="masonry-item" *ngFor="let painting of paintingList">
+      <div class="card">
+        <img [src]="painting.imageUrl" [alt]="painting.title">
+        <div class="card-overlay">
+          <h3>{{ painting.title }}</h3>
+          <p>{{ painting.medium }}</p>
+          <p>{{ painting.year }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
